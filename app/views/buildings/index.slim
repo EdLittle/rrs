@@ -1,0 +1,10 @@
+table.table.table-striped.table-bordered
+	thead
+		th #
+		th Name
+		th	
+	- @buildings.each do |b|
+		tr	
+			td= b.id
+			td= b.name
+			td= link_to "Edit", "#", :class => 'btn btn-primary'

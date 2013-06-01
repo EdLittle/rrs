@@ -22,6 +22,11 @@ end
 
 gem 'jquery-rails'
 
+gem "twitter-bootstrap-rails"
+gem "slim"
+gem "therubyracer"
+gem "less-rails"
+
 #Test Driven Development Gems
 gem "rspec-rails", :group => [:test, :development]
 group :test do
