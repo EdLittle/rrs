@@ -1,10 +1,15 @@
 doctype html
 html
 	head
-		title RRS
+		title Room Reservation System
+		meta property="og:title" content="Room Reservation"
+		meta property="og:description" content="Reserve Rooms in UP!"
+		meta property="og:url" content="#{request.url}"
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 
-	body.row-fluid
-		.span12== yield
+	body
+		div.container-fluid
+			div.row-fluid
+				== yield

@@ -12,7 +12,13 @@ class BuildingTest < ActiveSupport::TestCase
 
   test "Building should have name" do
   	building = Building.new
-  	assert building.name.nil?
+  	assert !building.save
+  end
+
+  test "Building has many rooms" do
+    building = Building.create
+    rooms = building.rooms
+    assert rooms.empty?
   end
 
 end

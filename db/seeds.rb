@@ -5,5 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Building.create(name: "Melchor Hall")
-Building.create(name: "Palma Hall")
+building1 = Building.create(name: "Melchor Hall")
+buidling2 = Building.create(name: "Palma Hall")
+
+Room.create(name: "PH 115", building_id: building1.id)
+Room.create(name: "PH 116", building_id: building1.id)
+Room.create(name: "PH 117", building_id: building1.id)
+
+Room.create(name: "MH 325", building_id: buidling2.id)
+Room.create(name: "MH 326", building_id: buidling2.id)
+Room.create(name: "MH 327", building_id: buidling2.id)
