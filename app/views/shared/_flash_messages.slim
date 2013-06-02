@@ -1,0 +1,6 @@
+- unless flash.empty?
+	div class="alert alert-#{flash.keys.first}"
+		button.close data-dismiss="alert" &times;
+		- flash.each do |key, value|
+			= value
+			
