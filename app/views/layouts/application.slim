@@ -5,11 +5,14 @@ html
 		meta property="og:title" content="Room Reservation"
 		meta property="og:description" content="Reserve Rooms in UP!"
 		meta property="og:url" content="#{request.url}"
+		link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 
 	body
 		div.container-fluid
-			div.row-fluid
-				== yield
+			div.row
+				.span12
+					== yield
+					

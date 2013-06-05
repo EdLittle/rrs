@@ -27,7 +27,7 @@ class BuildingsController < ApplicationController
 	end
 
 	def show
-		
+		@building = Building.find params[:id]
 	end
 	
 	def update
