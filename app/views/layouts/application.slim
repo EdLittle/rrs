@@ -11,8 +11,6 @@ html
 		= csrf_meta_tags
 
 	body
-		div.container-fluid
-			div.row
-				.span12
-					== yield
-					
+		div.container
+			.row-fluid
+				== yield

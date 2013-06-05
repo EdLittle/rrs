@@ -1,14 +1,20 @@
-= form_for(@building, :html => {:class => "form_horizontal"}) do |b|
+= form_for(@building, :html => {:class => "form-horizontal span5", :id => "building-form"}) do |b|
 	.control-group
 		- if @building.errors.any?
-			.alert.alert-error
+			.alert.alert-error.controls
 				button.close data-dismiss="alert" &times;
 				- @building .errors.full_messages.each do |error|
 					= error
 
+	
 	.control-group
 		= b.label "Building Name", :class => "control-label"
-		.controls= b.text_field :name
+		.controls= b.text_field :name, :class => "span12"
+
+	.control-group
+		= b.label "Description", :class => "control-label"
+		.controls= b.text_area :description, :rows => 5, :class => "span12"
+		
 	
 	.control-group
 		.controls= b.submit :class => "btn btn-primary"

@@ -15,6 +15,13 @@ class BuildingTest < ActiveSupport::TestCase
   	assert !building.save
   end
 
+  test "Building description is not a required field" do
+    building = Building.new
+    building.name = "Test"
+    building.description = ""
+    assert building.save
+  end
+
   test "Building has many rooms" do
     building = Building.create
     rooms = building.rooms

@@ -1,13 +1,19 @@
-div.span12
-	= render :partial => 'shared/flash_messages'
+= render :partial => 'shared/flash_messages'
+ul#building_list
+	- @buildings.each do |building|
+		li.span3.building
+			div
+				img.img-rounded src="http://placekitten.com/300/200"
+			h4= link_to building.name, building_path(building)
+			hr
+			p
+				= truncate(building.description, :length => 80, :separator => " ")
+				br
+				small.muted
+					= building.rooms.count.to_s + " rooms | "
+					= building.rooms.count.to_s + " labs | " 
+					= building.rooms.count.to_s + " classrooms"
 
-	ul#thumbnails
-		- @buildings.each do |building|
-			li.span2
-				div
-					img.img-rounded src="http://placekitten.com/300/200"
-				h4= building.name
-				hr
-				.row
-					.span1= link_to "Edit", "#" , :class => "btn btn-inverse"
-					.span1= link_to "Delete", "#", :class => "btn btn-inverse"
+			.row-fluid
+				.span1= link_to "Edit", "#" , :class => "btn btn-inverse"
+				.span1.offset2= link_to "Delete", "#", :class => "btn btn-inverse"
