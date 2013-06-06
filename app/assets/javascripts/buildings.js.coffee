@@ -1,8 +1,7 @@
 $(document).ready ->
-
-$("#building-form").validate
-	errorClass: "field_with_errors"
-	errorElement: "label"
-	rules:
-		"building[name]": "required"
+	$("#building-form").validate
+		errorClass: "text-error"
+		errorElement: "label"
+		rules:
+			"building[name]": "required"
 
