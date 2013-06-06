@@ -15,7 +15,7 @@ class BuildingsController < ApplicationController
 	end
 
 	def edit
-		
+		@building = Building.find params[:id]
 	end
 
 	def index
@@ -32,6 +32,15 @@ class BuildingsController < ApplicationController
 	end
 	
 	def update
+		@building = Building.find params[:id]
+
+		if @building.update_attributes params[:building]
+			flash[:success] = "Building succesfully updated."
+			redirect_to building_path @building
+		else
+			flash[:error] = "Building unsuccessfully updated."
+			render :action => :index
+		end
 		
 	end
 end

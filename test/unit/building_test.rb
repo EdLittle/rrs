@@ -28,4 +28,9 @@ class BuildingTest < ActiveSupport::TestCase
     assert rooms.empty?
   end
 
+  test "Building should have unique name" do
+    building = Building.create(:name => "building")
+    assert !Building.create(:name => "building")
+  end
+
 end
