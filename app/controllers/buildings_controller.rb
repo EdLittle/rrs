@@ -10,8 +10,11 @@ class BuildingsController < ApplicationController
 		end
 	end
 
-	def delete
-		
+	def destroy
+		@building = Building.find params[:id]
+		@building.destroy
+		flash[:success] = "Building successfully deleted."
+		redirect_to :action => :index
 	end
 
 	def edit
@@ -41,6 +44,5 @@ class BuildingsController < ApplicationController
 			flash[:error] = "Building unsuccessfully updated."
 			render :action => :index
 		end
-		
 	end
 end

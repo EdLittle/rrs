@@ -15,5 +15,5 @@ ul#building_list
 					= building.rooms.count.to_s + " classrooms"
 
 			.row-fluid
-				.span1= link_to "Edit", "#" , :class => "btn btn-inverse"
-				.span1.offset2= link_to "Delete", "#", :class => "btn btn-inverse"
+				.span1= link_to "Edit", edit_building_path(building) , :class => "btn btn-inverse"
+				.span1.offset2= link_to "Delete", building, :method => :delete, :confirm => "Deleting this building will delete all other objects related to it. Are you sure?", :class => "btn btn-inverse"
