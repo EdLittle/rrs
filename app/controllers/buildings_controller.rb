@@ -27,7 +27,6 @@ class BuildingsController < ApplicationController
 
 	def new
 		@building = Building.new
-		#flash[:success] = "Congrats, it's super nice."
 	end
 
 	def show

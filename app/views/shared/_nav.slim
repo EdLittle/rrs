@@ -1,0 +1,11 @@
+.navbar.navbar-inverse.navbar-fixed-top
+	.navbar-inner
+		.container
+			ul.nav
+				li class="#{params[:action] == 'home' ? 'active' : ''}"
+					= link_to "Home", "/"
+				li class="#{params[:controller] == 'buildings' ? 'active' : ''}"
+					= link_to "Buildings", buildings_path
+				li class="#{params[:action] == 'about' ? 'active' : ''}"
+					= link_to "About", "#{}"
+				li= link_to "Others", "#"
