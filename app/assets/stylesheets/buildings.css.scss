@@ -2,16 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#thumbnails{
-	list-style: none;
-}
-
 .building{
 	height: 360px;
 }
 
-#building_list{
+#building-list{
 	margin: 20px 0 0;
 
 	li:nth-child(4n+1){
@@ -19,6 +14,20 @@
 	}
 }
 
-#new_building{
+#rooms-list{
+	list-style: none;
+
+	margin:0;
+	li:nth-child(4n+1){
+		margin:0;
+	}
+}
+
+.room-details ul{
+	list-style: none;
 	margin: 0;
+}
+
+.room-link:hover{
+	text-decoration: none;
 }

@@ -1,4 +1,46 @@
 .span12
 	= render :partial => "shared/flash_messages"
 	h3= @building.name
-	= @building.description
+	hr
+	.row-fluid 
+		.span6
+			label 
+				b.muted Description:
+				p= @building.description
+			
+			label
+				b.muted Located at:
+				p= "#{[@building.street_address,  'Diliman, Quezon City, Philippines'].join(' ')}"
+		.span6
+			img.img-rounded src="http://placekitten.com/570/200"
+		
+	
+	.row-fluid
+		h4 Rooms
+		ul#rooms-list
+			- unless @building.rooms.empty?
+				- @building.rooms.each do |room|
+					li.span3= link_to room, :class => "room-link" do 
+						
+						.room-details.well
+							label.lead.text-info= room.name
+							hr
+							ul
+								li
+									i.muted= "Holds up to "
+									b.muted= "#{room.capacity} people"
+								li
+									b.muted= room.category.name
+								li
+									b.muted="₱ #{number_with_delimiter(room.rate)}"
+									i.muted= " per hour"
+
+			- else
+				li.room-details
+					.muted There are no rooms yet. 
+	
+
+	div
+		= link_to "Add More Rooms", "#", :class => "btn btn-info"
+	div
+		= render :partial => "rooms/new"

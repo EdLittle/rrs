@@ -1,0 +1,30 @@
+.span12
+	h4 Add a room
+	= form_for(@building.rooms.new, :html => {:id => "add-room", :class => "form-horizontal span6"}) do |r|
+		.control-group
+			- if @building.errors.any?
+				.alert.alert-error.controls
+					button.close data-dismiss="alert" &times;
+					- @building.rooms.errors.full_messages.eacg do |error|
+						= error
+
+		= r.hidden_field :building_id, :value => @building.id
+		.control-group
+			= r.label "Name", :class => "control-label span4"
+			.controls= r.text_field :name 
+
+		.control-group
+			= r.label "Capacity", :class => "control-label span4"
+			.controls= r.text_field :capacity 
+
+		.control-group
+			= r.label "Rate/hour", :class => "control-label span4"
+			.controls= r.text_field :rate 
+
+		.control-group
+			= r.label "Category", :class => "control-label span4"
+			.controls= r.select :category_id, options_for_select(@categories.collect{|p| [p.name, p.id]}, "Select Category"), :include_blank => true
+
+		.control-group
+			.controls= r.submit "Submit", :class => "btn btn-inverse"
+

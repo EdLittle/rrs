@@ -1,5 +1,5 @@
 = render :partial => 'shared/flash_messages'
-ul#building_list
+ul#building-list
 	- @buildings.each do |building|
 		li.span3.building
 			div
@@ -10,10 +10,9 @@ ul#building_list
 				= truncate(building.description, :length => 80, :separator => " ")
 				br
 				small.muted
-					= building.rooms.count.to_s + " rooms | "
-					= building.rooms.count.to_s + " labs | " 
-					= building.rooms.count.to_s + " classrooms"
-
+					= "#{pluralize(building.rooms.count, 'room')} | "
+					= "#{pluralize(building.classrooms.count, 'classroom')} | "
+					= "#{pluralize(building.labs.count, 'lab')}" 
 			.row-fluid
 				.span1= link_to "Edit", edit_building_path(building) , :class => "btn btn-inverse"
 				.span1.offset2= link_to "Delete", building, :method => :delete, :confirm => "Deleting this building will delete all other objects related to it. Are you sure?", :class => "btn btn-inverse"

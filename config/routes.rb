@@ -58,6 +58,6 @@ Rrs::Application.routes.draw do
   
   root :to => "homepage#home"
   match "about", :controller => "homepage", :action => "about"
-  resources :buildings
+  resources :buildings, :rooms
 
 end

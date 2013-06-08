@@ -31,6 +31,7 @@ class BuildingsController < ApplicationController
 
 	def show
 		@building = Building.find params[:id]
+		@categories = Category.select("name, id")
 	end
 	
 	def update

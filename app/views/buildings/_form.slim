@@ -15,6 +15,13 @@
 		= b.label "Description", :class => "control-label"
 		.controls= b.text_area :description, :rows => 5, :class => "span12"
 		
+	.control-group
+		= b.label "Street Address", :class => "control-label" do
+			b Street 
+			|Address
+		.controls
+			= b.text_field :street_address, :class => "span12"
+			|Diliman, Quezon City
 	
 	.control-group
 		.controls= b.submit :class => "btn btn-primary"

@@ -1,11 +1,12 @@
 .navbar.navbar-inverse.navbar-fixed-top
 	.navbar-inner
 		.container
+			a.brand herf="#" RRS
 			ul.nav
 				li class="#{params[:action] == 'home' ? 'active' : ''}"
-					= link_to "Home", "/"
+					= link_to "", "/", :class => "icon-home nav-icon"
 				li class="#{params[:controller] == 'buildings' ? 'active' : ''}"
 					= link_to "Buildings", buildings_path
-				li class="#{params[:action] == 'about' ? 'active' : ''}"
-					= link_to "About", "#{}"
+				li class="#{(params[:action] == 'about' && params[:controller] == 'homepage') ? 'active' : ''}"
+					= link_to "About", "/about"
 				li= link_to "Others", "#"
