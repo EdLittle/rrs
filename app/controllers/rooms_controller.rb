@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
 
 	def create
-		puts params.inspect
 		@room = Room.new params[:room]
 
 		if @room.save
@@ -11,6 +10,10 @@ class RoomsController < ApplicationController
 			flash[:error] = "Room unsuccessfully added."
 			render :controller => "buildings", :action => "show"
 		end		
+	end
+
+	def show
+		@room = Room.find params[:id]
 	end
 	
 end
