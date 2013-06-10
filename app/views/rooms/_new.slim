@@ -8,21 +8,22 @@
 					- @building.rooms.errors.full_messages.eacg do |error|
 						= error
 
-		= r.hidden_field :building_id, :value => @building.id
 		.control-group
-			= r.label "Name", :class => "control-label span4"
-			.controls= r.text_field :name 
-
+			= r.label "Name", :class => "control-label"
+			.controls
+				= r.text_field :name 
+				= r.hidden_field :building_id, :value => @building.id
+		
 		.control-group
-			= r.label "Capacity", :class => "control-label span4"
+			= r.label "Capacity", :class => "control-label"
 			.controls= r.text_field :capacity 
 
 		.control-group
-			= r.label "Rate/hour", :class => "control-label span4"
+			= r.label "Rate/hour", :class => "control-label"
 			.controls= r.text_field :rate 
 
 		.control-group
-			= r.label "Category", :class => "control-label span4"
+			= r.label "Category", :class => "control-label"
 			.controls= r.select :category_id, options_for_select(@categories.collect{|p| [p.name, p.id]}, "Select Category"), :include_blank => true
 
 		.control-group
