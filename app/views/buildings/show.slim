@@ -36,7 +36,7 @@
 									i.muted= " per hour"
 								li
 									= link_to "Edit", edit_room_path(room)
-
+									= link_to "Delete", room, :method => :delete, :confirm => "Deleting this room will delete all other objects related to it. Are you sure?"
 			- else
 				li.room-details
 					.muted There are no rooms yet. 

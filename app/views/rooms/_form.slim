@@ -22,8 +22,7 @@
 
 		.control-group
 			= r.label "Category", :class => "control-label"
-			.controls= r.select :category_id, options_for_select(@categories.collect{|p| [p.name, p.id]}, "Select Category"), :include_blank => true
-
+			.controls= r.select :category_id, options_for_select(@categories.collect{|p| [p.name, p.id]}, room.category_id), :include_blank => true 
 		.control-group
 			.controls= r.submit "Submit", :class => "btn btn-inverse"
 

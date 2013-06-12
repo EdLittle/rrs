@@ -1,5 +1,5 @@
 .span12
 	h4 Add a room
 
-	= render :partial => "rooms/form", :locals => {:room => Room.new, :form_id => "add-room"}
+	= render :partial => "rooms/form", :locals => {:room => @building.rooms.new, :form_id => "add-room"}
 	
