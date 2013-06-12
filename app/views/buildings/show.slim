@@ -34,6 +34,8 @@
 								li
 									b.muted="₱ #{number_with_delimiter(room.rate)}"
 									i.muted= " per hour"
+								li
+									= link_to "Edit", edit_room_path(room)
 
 			- else
 				li.room-details
