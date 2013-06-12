@@ -1,0 +1,15 @@
+#footer.row-fluid
+	ul.breadcrumb.well
+		li class="#{params[:action] == 'home' ? 'active' : ''}"
+			= link_to "", "/", :class => "icon-home nav-icon"
+			span.divider= "/"
+		li class="muted #{params[:controller] == 'buildings' ? 'active' : ''}"
+			= link_to "Buildings", buildings_path
+			span.divider= "/"
+		li class="muted #{(params[:action] == 'about' && params[:controller] == 'homepage') ? 'active' : ''}"
+			= link_to "About", "/about"
+			span.divider= "/"
+		li
+			= link_to "Others", "#"
+	p Created by Ed Escalante on Ruby on Rails 3
+	= javascript_include_tag "application"
