@@ -1,6 +1,6 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :description, :street_address
-  has_many :rooms
+  has_many :rooms, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
 
   def avrs
