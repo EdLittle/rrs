@@ -1,0 +1,27 @@
+h4 Sign Up!
+
+= form_for(@user, :html => {:class => "form-horizontal span7"}) do |f|
+  .control-group
+    = f.label :username, :class => "control-label"
+    .controls
+      = f.text_field :username
+
+  .control-group
+    = f.label :email, :class => "control-label"
+    .controls
+      = f.text_field :email
+
+  .control-group
+    = f.label :password, :class => "control-label"
+    .controls
+      = f.password_field :password
+
+  .control-group
+    .controls
+      = f.submit "Sign up!", :class => "btn btn-success roboto-slab"
+
+.span3
+  p Sign up using Facebook
+  p Sign up using Yahoo!
+  p Sign up using Twitter
+  p Sign up using Google

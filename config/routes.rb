@@ -58,6 +58,9 @@ Rrs::Application.routes.draw do
   
   root :to => "homepage#home"
   match "about", :controller => "homepage", :action => "about"
-  resources :buildings, :rooms
+  match "login", :controller => "users", :action => "login"
+  match "signup", :controller => "users", :action => "signup"
+
+  resources :buildings, :rooms, :users
 
 end
