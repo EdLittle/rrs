@@ -27,6 +27,7 @@ gem "slim"
 gem "therubyracer"
 gem "less-rails"
 gem "annotate"
+gem "bcrypt-ruby"
 #Test Driven Development Gems
 gem "rspec-rails", :group => [:test, :development]
 group :test do
