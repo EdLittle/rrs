@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: buildings
+#
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  description    :text
+#  street_address :string(255)
+#
+
 class Building < ActiveRecord::Base
   attr_accessible :name, :description, :street_address
   has_many :rooms, :dependent => :destroy
