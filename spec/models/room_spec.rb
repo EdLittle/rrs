@@ -18,7 +18,8 @@ describe Room do
 	before { @room = Room.new(
 		name: "Test",
 		capacity: 12,
-		rate: 100.00
+		rate: 100.00,
+		building_id: 1
 		)
 	}
 
@@ -30,4 +31,12 @@ describe Room do
 	it { should respond_to(:rate) }
 	it { should respond_to(:category) }
 
+	it { should be_valid }
+
+
+	describe "a room should have a building id" do
+		before {@room.building_id = nil }
+
+		it { should_not be_valid }
+	end
 end

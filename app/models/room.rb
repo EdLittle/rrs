@@ -16,4 +16,8 @@ class Room < ActiveRecord::Base
   attr_accessible :name, :capacity, :rate, :description, :building_id, :category_id
   belongs_to :building
   belongs_to :category
+
+  validates :building_id, :presence => true
+  validates :rate, :numericality => true
+  validates :capacity, :numericality => true
 end

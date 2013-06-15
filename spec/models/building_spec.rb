@@ -20,7 +20,7 @@ describe Building do
 		)
 	} 
 
-	subject{ @building }
+	subject { @building }
 	it { should respond_to(:name) }
 	it { should respond_to(:street_address) }
 	it { should respond_to(:description) }
@@ -31,5 +31,16 @@ describe Building do
 	it { should respond_to(:labs) }
 	it { should respond_to(:libraries) }
 	it { should respond_to(:theaters) }
+
+	it { should be_valid }
+
+	describe "building name should be unique" do
+		before do
+			duplicate_building = @building.dup 
+			duplicate_building.save
+		end
+
+		it { should_not be_valid }
+	end
 
 end
