@@ -13,9 +13,23 @@
 require 'spec_helper'
 
 describe Building do
-	it "has a name which is a string" do
-		building = Building.new
-		building.name.should == nil
-		building.id.should == nil
-	end 	 
+	before { @building = Building.new(
+		name: "New Building",
+		description: "Description here",
+		street_address: "Address"
+		)
+	} 
+
+	subject{ @building }
+	it { should respond_to(:name) }
+	it { should respond_to(:street_address) }
+	it { should respond_to(:description) }
+	it { should respond_to(:rooms) }
+	it { should respond_to(:avrs) }
+	it { should respond_to(:classrooms) }
+	it { should respond_to(:faculty_offices) }
+	it { should respond_to(:labs) }
+	it { should respond_to(:libraries) }
+	it { should respond_to(:theaters) }
+
 end

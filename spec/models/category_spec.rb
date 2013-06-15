@@ -11,5 +11,11 @@
 require 'spec_helper'
 
 describe Category do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before { @category = Category.new(name: "Some name") }
+
+	subject { @category }
+
+	it { should respond_to(:name) }
+	it { should respond_to(:rooms) }
+	
 end

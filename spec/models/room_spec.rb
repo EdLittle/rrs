@@ -15,5 +15,19 @@
 require 'spec_helper'
 
 describe Room do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before { @room = Room.new(
+		name: "Test",
+		capacity: 12,
+		rate: 100.00
+		)
+	}
+
+	subject { @room }
+
+	it { should respond_to(:name) }
+	it { should respond_to(:building) }
+	it { should respond_to(:capacity) }
+	it { should respond_to(:rate) }
+	it { should respond_to(:category) }
+
 end
