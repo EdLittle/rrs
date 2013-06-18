@@ -1,4 +1,4 @@
-= form_for(room, :html => {:id => form_id, :class => "form-horizontal span6"}) do |r|
+= form_for(room, :html => {:id => "new_room", :class => "form-horizontal span6"}) do |r|
 		.control-group
 			- if room.errors.any?
 				.alert.alert-error.controls
@@ -9,16 +9,16 @@
 		.control-group
 			= r.label "Name", :class => "control-label"
 			.controls
-				= r.text_field :name 
+				= r.text_field :name, :class => "span12"
 				= r.hidden_field :building_id, :value => room.building_id
 		
 		.control-group
 			= r.label "Capacity", :class => "control-label"
-			.controls= r.text_field :capacity 
+			.controls= r.text_field :capacity, :class => "span12"
 
 		.control-group
 			= r.label "Rate/hour", :class => "control-label"
-			.controls= r.text_field :rate 
+			.controls= r.text_field :rate, :class => "span12"
 
 		.control-group
 			= r.label "Category", :class => "control-label"
