@@ -12,8 +12,8 @@ h4 Sign Up!
   .control-group
     = f.label :username, :class => "control-label"
     .controls
-      = f.text_field :username
-
+      = f.text_field :username, :class => "username-search"
+      span#icon-container        
   .control-group
     = f.label :email, :class => "control-label"
     .controls
@@ -48,6 +48,3 @@ h4 Sign Up!
   p Sign up using Yahoo!
   p Sign up using Twitter
   p Sign up using Google
-
-
-= javascript_include_tag :users

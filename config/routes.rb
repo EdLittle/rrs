@@ -61,6 +61,8 @@ Rrs::Application.routes.draw do
   match "login", :controller => "users", :action => "login"
   match "signup", :controller => "users", :action => "signup"
 
-  resources :buildings, :rooms, :users
-
+  resources :buildings, :rooms
+  resources :users do
+    get :username_taken,  :on => :collection
+  end
 end

@@ -20,4 +20,11 @@ class UsersController < ApplicationController
 
     end
   end
+
+  def username_taken
+    puts params.inspect
+    username = params[:username]
+
+    render :json => !User.find_by_username(username).nil?
+  end
 end
