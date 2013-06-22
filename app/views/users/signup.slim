@@ -13,31 +13,37 @@ h4 Sign Up!
     = f.label :username, :class => "control-label"
     .controls
       = f.text_field :username, :class => "username-search"
-      span#icon-container        
+      span.icon-container
+
   .control-group
     = f.label :email, :class => "control-label"
     .controls
       = f.text_field :email
+      span.icon-container
 
   .control-group
     = f.label :last_name, :class => "control-label"
     .controls
       = f.text_field :last_name
+      span.icon-container
 
   .control-group
     = f.label :first_name, :class => "control-label"
     .controls
-      = f.text_field :first_name  
+      = f.text_field :first_name 
+      span.icon-container 
 
   .control-group
     = f.label :password, :class => "control-label"
     .controls
       = f.password_field :password
+      span.icon-container
 
   .control-group
     = f.label :password_confirmation, :class => "control-label"
     .controls
       = f.password_field :password_confirmation
+      span.icon-container
 
   .control-group
     .controls

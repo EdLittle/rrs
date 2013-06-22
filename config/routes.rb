@@ -64,5 +64,6 @@ Rrs::Application.routes.draw do
   resources :buildings, :rooms
   resources :users do
     get :username_taken,  :on => :collection
+    get :email_taken, :on => :collection
   end
 end

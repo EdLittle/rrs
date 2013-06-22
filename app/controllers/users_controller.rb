@@ -17,14 +17,18 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Sign up unsuccessful"
       render :action => :signup
-
     end
   end
 
   def username_taken
-    puts params.inspect
     username = params[:username]
 
     render :json => !User.find_by_username(username).nil?
+  end
+
+  def email_taken
+    email = params[:email]
+
+    render :json => !User.find_by_email(email).nil?
   end
 end
