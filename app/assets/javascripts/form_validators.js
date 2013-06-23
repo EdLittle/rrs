@@ -1,26 +1,3 @@
-
-$.validator.addMethod("usernameMustNotBeTaken", function(value, element){
-  var username = value;
-  var is_taken = $.get("/users/username_taken?username=" + username, function(data){
-     
-    });
-  
-  return is_taken;
-},  "Username is already taken");
-
-
-$.validator.addMethod("emailMustNotBeTaken", function(value, element){
-  var email = value;
-  //var is_taken;
-  var is_taken  = $.get("/users/email_taken?email=" + email, function(data){
-    is_taken = Boolean(data);
-    return is_taken;
-  });
-  alert(is_taken);
-  return is_taken;
-}, "Email is already taken.");
-
-
 $("#new_user").validate({
   errorClass: "text-error",
   errorElement: "label",
@@ -36,7 +13,8 @@ $("#new_user").validate({
       required: true, 
       minlength: 3, 
       maxlength: 25,
-      usernameMustNotBeTaken: true
+      //usernameMustNotBeTaken: true,
+      remote: "/users/username_taken"//.join('')
     },
     "user[last_name]": {
       required: true
@@ -44,7 +22,7 @@ $("#new_user").validate({
     "user[email]": { 
       required: true, 
       email: true,
-      emailMustNotBeTaken: true
+      remote: "users/email_taken"
     },
     "user[password]": { 
       required: true, 
@@ -55,7 +33,17 @@ $("#new_user").validate({
       equalTo: "#user_password", 
       required: true 
     }
-  }
+  },
+  messages:{
+    "user[username]": {
+      remote: "This username is already taken."
+    },
+    "user[email]": {
+      remote: "This email is already registered."
+    }
+  },
+  onKeyup: false,
+  onBlur: true
 });
 
 $("#building-form").validate({

@@ -21,14 +21,12 @@ class UsersController < ApplicationController
   end
 
   def username_taken
-    username = params[:username]
-
-    render :json => !User.find_by_username(username).nil?
+    username = params[:user][:username]
+    render :json => User.find_by_username(username).nil?
   end
 
   def email_taken
-    email = params[:email]
-
-    render :json => !User.find_by_email(email).nil?
+    email = params[:user][:email]
+    render :json => User.find_by_email(email).nil?
   end
 end
