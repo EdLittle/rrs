@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'tinymce-rails'
 gem "twitter-bootstrap-rails"
 gem "slim"
 gem "therubyracer"

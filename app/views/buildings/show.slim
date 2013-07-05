@@ -6,7 +6,7 @@
 		.span6
 			label 
 				b.muted Description:
-				p= @building.description
+				div= @building.description.html_safe
 			
 			label
 				b.muted Located at:

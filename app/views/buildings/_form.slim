@@ -1,3 +1,6 @@
+= tinymce_assets
+= tinymce
+
 = form_for(@building, :html => {:class => "form-horizontal span7", :id => "building-form"}) do |b|
 	.control-group
 		- if @building.errors.any?
@@ -14,7 +17,7 @@
 
 	.control-group
 		= b.label "Description", :class => "control-label"
-		.controls= b.text_area :description, :rows => 5, :class => "span12"
+		.controls= b.text_area :description, :rows => 5, :class => "span12 tinymce"
 		
 	.control-group
 		= b.label "Street Address", :class => "control-label" do
@@ -26,3 +29,5 @@
 	
 	.control-group
 		.controls= b.submit :class => "btn btn-primary"
+
+
