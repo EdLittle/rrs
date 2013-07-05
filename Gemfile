@@ -21,7 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mercury-rails'
 gem "twitter-bootstrap-rails"
 gem "slim"
 gem "therubyracer"
