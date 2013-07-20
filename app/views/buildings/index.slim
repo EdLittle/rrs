@@ -7,7 +7,7 @@ ul#building-list
 			h4= link_to building.name, building_path(building)
 			hr
 			p
-				= truncate(building.description, :length => 80, :separator => " ")
+				= truncate(building.description, :length => 80, :separator => " ").html_safe
 				br
 				small.muted
 					= "#{pluralize(building.rooms.count, 'room')} | "
