@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
 
     if @user.save
-      flash[:success] = "Sign up successful."
+      flash[:success] = "Sign up successful"
       redirect_to :action => :edit
     else
       flash[:error] = "Sign up unsuccessful"

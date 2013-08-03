@@ -1,19 +1,15 @@
 $("#new_user").validate({
   errorClass: "text-error",
+  validClass: "text-success",
   errorElement: "label",
   errorPlacement: function(error, element){
     error.insertAfter(element.next());
-    element.next().html("<i class='icon-remove text-error'></i>");
-  },
-  success: function(label){
-    label.siblings(".icon-container").html("<i class='icon-ok text-success'></i>")
   },
   rules: {
     "user[username]": { 
       required: true, 
       minlength: 3, 
       maxlength: 25,
-      //usernameMustNotBeTaken: true,
       remote: "/users/username_taken"//.join('')
     },
     "user[last_name]": {
@@ -41,6 +37,18 @@ $("#new_user").validate({
     "user[email]": {
       remote: "This email is already registered."
     }
+  },
+  success: function(label){
+    label.siblings("i").removeClass();
+    label.siblings("i").addClass("icon-ok text-success");
+  },
+  showErrors: function(errorMap, errorList){
+    $.each(errorList, function(idx, list_item){
+      var element = $(list_item.element).siblings("i");
+      $(element).removeClass();
+      $(element).addClass("icon-remove text-error");
+    });
+    this.defaultShowErrors();
   },
   onKeyup: false,
   onBlur: true
