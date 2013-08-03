@@ -206,5 +206,5 @@ DEPENDENCIES
   slim
   therubyracer
   tinymce-rails
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (~> 2.2.6)
   uglifier (>= 1.0.3)

@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'tinymce-rails'
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", '~> 2.2.6'
 gem "slim"
 gem "therubyracer"
 gem "less-rails"
