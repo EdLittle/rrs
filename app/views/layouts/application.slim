@@ -12,9 +12,10 @@ html
 	body
 		.container
 			.row-fluid
-				= render :partial => "shared/nav"
+				= render partial: "shared/nav"
+				= render partial: "shared/flash_messages"	
 				== yield
 
-			= render :partial => "shared/footer"
+			= render partial: "shared/footer"
 			
 		
