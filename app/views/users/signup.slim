@@ -1,56 +1,63 @@
 h4 Sign Up!
 
-= form_for(@user, :html => {:class => "form-horizontal span7"}, :id => "user-form") do |f|
-  .control-group
-    - if @user.errors.any?
-      .alert.alert-error.controls
-        button.close data-dismiss="alert" &times;
-        - @user.errors.full_messages.each do |error|
-          = error
+ul#signup-form
+  li.left
+    = form_for(@user, :html => {:class => "form-horizontal"}, :id => "user-form") do |f|
+      .control-group
+        - if @user.errors.any?
+          .alert.alert-error.controls
+            button.close data-dismiss="alert" &times;
+            - @user.errors.full_messages.each do |error|
+              = error
 
 
-  .control-group
-    = f.label :username, :class => "control-label"
-    .controls
-      = f.text_field :username, :class => "username-search"
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :username, :class => "control-label"
+        .controls
+          = f.text_field :username, :class => "username-search"
+          i style="padding: 0 1em"
 
-  .control-group
-    = f.label :email, :class => "control-label"
-    .controls
-      = f.text_field :email
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :email, :class => "control-label"
+        .controls
+          = f.text_field :email
+          i style="padding: 0 1em"
 
-  .control-group
-    = f.label :last_name, :class => "control-label"
-    .controls
-      = f.text_field :last_name
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :last_name, :class => "control-label"
+        .controls
+          = f.text_field :last_name
+          i style="padding: 0 1em"
 
-  .control-group
-    = f.label :first_name, :class => "control-label"
-    .controls
-      = f.text_field :first_name 
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :first_name, :class => "control-label"
+        .controls
+          = f.text_field :first_name 
+          i style="padding: 0 1em"
 
-  .control-group
-    = f.label :password, :class => "control-label"
-    .controls
-      = f.password_field :password
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :password, :class => "control-label"
+        .controls
+          = f.password_field :password
+          i style="padding: 0 1em"
 
-  .control-group
-    = f.label :password_confirmation, :class => "control-label"
-    .controls
-      = f.password_field :password_confirmation
-      i style="padding: 0 1em"
+      .control-group
+        = f.label :password_confirmation, :class => "control-label"
+        .controls
+          = f.password_field :password_confirmation
+          i style="padding: 0 1em"
 
-  .control-group
-    .controls
-      = f.submit "Sign up!", :class => "btn btn-success roboto-slab"
+      .control-group
+        .controls
+          = f.submit "Sign up!", :class => "btn btn-success roboto-slab"
 
-.span3
-  p Sign up using Facebook
-  p Sign up using Yahoo!
-  p Sign up using Twitter
-  p Sign up using Google
+    li.right
+      ul#social-signup
+        li
+          .btn.btn-primary.span7 Sign up using Facebook
+        li
+          .btn.btn-inverse.span7 Sign up using Yahoo!
+        li
+          .btn.btn-info.span7 Sign up using Twitter
+        li
+          .btn.btn-danger.span7 Sign up using Google

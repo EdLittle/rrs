@@ -1,0 +1,23 @@
+#signup-form{
+  clear: both;
+  margin: 0;
+  padding: 10px 0;
+
+  li{
+    list-style-type: none;
+  }
+  li.left{
+    border-right: 2px solid gray;
+    width: 50%;
+  }
+  li.right{
+    width: 45%;
+  }
+}
+
+#social-signup{
+  li{
+    clear: both;
+    padding: 10px 0;
+  }
+}
