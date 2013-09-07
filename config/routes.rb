@@ -56,13 +56,16 @@ Rrs::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   
-  root :to => "homepage#home"
-  match "about", :controller => "homepage", :action => "about"
-  match "login", :controller => "users", :action => "login"
-  match "signup", :controller => "users", :action => "signup"
-
-  resources :buildings, :rooms
+  root to: "homepage#home"
   
+  match "about", to: "homepage#about", via: "get"
+  match "login", to: "sessions#new", via: "get"
+  match "signup", to: "users#signup", via: "get"
+  match "logout", to: "sessions#destroy", via: "delete"
+  resources :buildings, :rooms
+
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :users do
     get :username_taken,  :on => :collection
     get :email_taken, :on => :collection
