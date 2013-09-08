@@ -32,6 +32,12 @@ describe User do
 
   it { should be_valid }
 
+  describe "remember token should not be blank" do
+    before { @user.save }
+
+    its(:remember_token) { should_not be_blank }
+  end
+
   describe "when username is not present" do
   	before { @user.username = " " }
   	

@@ -28,6 +28,12 @@ describe "Authentication" do
       it { should have_title "Room Reservation System" }
       it { should have_link "Log out", href: logout_path }
       it { should_not have_link "Log in", href: login_path }
+   
+      describe "when logging out" do
+        before { click_link "Log out" }
+
+        it { should have_link("Log in") }
+      end
     end
   end
 
