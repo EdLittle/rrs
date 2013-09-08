@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def signup
+    @title = "Sign up!"
     @user = User.new
   end
 
@@ -26,13 +27,13 @@ class UsersController < ApplicationController
 
   # Used for checking if the user inputted a username that has already been taken
   def username_taken
-    username = params[:user][:username]
+    username = params[:user][:username].downcase
     render :json => User.find_by_username(username).nil?
   end
 
   # Used for checking if the user inputted an email that has already been taken
   def email_taken
-    email = params[:user][:email]
+    email = params[:user][:email].downcase
     render :json => User.find_by_email(email).nil?
   end
 end
