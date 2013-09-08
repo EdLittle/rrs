@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title Room Reservation System
+		title= @title.nil? ? "Room Reservation System" : @title
 		meta property="og:title" content="Room Reservation"
 		meta property="og:description" content="Reserve Rooms in UP!"
 		meta property="og:url" content="#{request.url}"
