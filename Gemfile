@@ -30,6 +30,7 @@ gem "annotate"
 gem "bcrypt-ruby", '~> 3.0.0'
 #Test Driven Development Gems
 gem "rspec-rails", :group => [:test, :development]
+
 group :test do
   gem "factory_girl_rails"
   gem "capybara"
