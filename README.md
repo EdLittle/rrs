@@ -1,9 +1,12 @@
 rrs
 ===
 
+## Room Reservation System
+
 Second coming of my past CS 192 project under Mrs Susan Festin
 
 This is a website where you can search for and reserve a room in UP Diliman.
 
-Made in Rails 3
-With Bootstrap
+**Heroku link** on *https://boiling-ravine-3581.herokuapp.com/*
+
+Made using **Ruby on Rails 3**
