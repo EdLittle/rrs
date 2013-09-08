@@ -20,4 +20,10 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
+
+  def log_out
+    self.current_user = nil
+    cookies.delete(:remember_token)
+    
+  end
 end
