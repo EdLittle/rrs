@@ -1,14 +1,14 @@
-.container
-	nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+.row
+	.navbar.navbar-inverse.navbar-fixed-top role="navigation"
 		.navbar-header
 			button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"
 				span.sr-only Toggle Navigation
 				span.icon-bar
 				span.icon-bar
 				span.icon-bar
-			strong= link_to "RRS", "#", class: "navbar-brand"
+			= link_to "RRS", "#", class: "navbar-brand"
 
-		.collapse.navbar-collapse.navbar-ex1-collapse
+		nav.collapse.navbar-collapse.navbar-ex1-collapse
 			ul.nav.navbar-nav
 				li class="#{params[:action] == 'home' ? 'active' : ''}"
 							= link_to "", "/", :class => "icon-home nav-icon"

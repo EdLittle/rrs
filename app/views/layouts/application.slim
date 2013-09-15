@@ -12,12 +12,11 @@ html
 		= csrf_meta_tags
 
 	body
-		.row
-			.container
-				= render partial: "shared/nav"
-				= render partial: "shared/flash_messages"	
-				== yield
+		.container
+			= render partial: "shared/nav"
+			= render partial: "shared/flash_messages"	
+			== yield
 
-				= render partial: "shared/footer"
-			
+			= render partial: "shared/footer"
+		
 		
