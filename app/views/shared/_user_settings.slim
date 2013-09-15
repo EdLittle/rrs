@@ -1,7 +1,6 @@
-.pull-right
-  ul.nav
-    - if signed_in? 
-      li= link_to "Log out", logout_path, method: "delete"
-    - else
-      li= link_to "Log in", login_path
-      li= link_to "Sign up", signup_path
+ul.nav.navbar-nav.navbar-right
+  - if signed_in? 
+    li= link_to "Log out", logout_path, method: "delete"
+  - else
+    li= link_to "Log in", login_path
+    li= link_to "Sign up", signup_path
