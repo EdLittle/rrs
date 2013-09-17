@@ -8,7 +8,7 @@
 				span.icon-bar
 			= link_to "RRS", "#", class: "navbar-brand"
 
-		nav.collapse.navbar-collapse.navbar-ex1-collapse
+		nav#main-navbar.collapse.navbar-collapse.navbar-ex1-collapse
 			ul.nav.navbar-nav
 				li class="#{params[:action] == 'home' ? 'active' : ''}"
 							= link_to "", "/", :class => "icon-home nav-icon"
