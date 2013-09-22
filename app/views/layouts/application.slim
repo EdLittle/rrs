@@ -7,16 +7,15 @@ html
 		meta property="og:url" content="#{request.url}"
 		meta name="viewport" content="width=device-width, initial-scale=1.0"
 		link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'
-		= stylesheet_link_tag "application", :media => "all"
 		= stylesheet_link_tag "bootstrap/css/bootstrap.min"
+		= stylesheet_link_tag "application", :media => "all"
 		= csrf_meta_tags
 
 	body
-		.container
-			= render partial: "shared/nav"
-			= render partial: "shared/flash_messages"	
-			== yield
+		.row
+			.container
+				= render partial: "shared/nav"
+				= render partial: "shared/flash_messages"	
+				== yield
 
-			= render partial: "shared/footer"
-		
-		
+				= render partial: "shared/footer"
