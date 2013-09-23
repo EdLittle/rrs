@@ -1,7 +1,28 @@
 @import "variables";
 
-.navbar-nav{
-  li a{
-    padding: 15px 15px;
+nav{
+  font-family: $roboto;
+  a{
+    //font-weight: bold;
+    text-transform: uppercase;
+    &.glyphicon{
+      top: 0;
+    }
+  }
+
+  li{ 
+    a{
+      padding: 15px 15px;
+    }
+
+    &:hover{
+      background: $maroon;
+    }
+  }
+
+  button.navbar-toggle{
+    &:hover{
+      background: $maroon;
+    }
   }
 }
